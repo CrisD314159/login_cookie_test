@@ -5,7 +5,7 @@ import dotenv from "dotenv";
 import GetRouter from "./routes/router.js";
 import helmet from "helmet";
 dotenv.config();
-const whitelist = ['http://localhost:5173', 'http://example2.com']
+const whitelist = ['http://localhost:5173', 'https://cookie-test-front-eight.vercel.app/login']
 const corsOptions = {
   origin: function (origin, callback) {
     if (whitelist.indexOf(origin) !== -1) {
@@ -25,7 +25,7 @@ app.use(helmet())
 
 app.use('/api', GetRouter());
 
-const port = process.env.PORT || 3030;
+const port = process.env.PORT || 8000;
 
 app.listen(port, ()=>{
   console.log(`Server is running on port ${port}`);

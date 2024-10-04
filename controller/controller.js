@@ -11,8 +11,9 @@ export const login = async (req, res) => {
     return res.cookie('auth', token, 
       {
         httpOnly: true,
-        secure: false, // Requiere HTTPS
-        sameSite: 'Lax',
+        secure: true, // Requiere HTTPS
+        sameSite: 'None',
+        maxAge: 7 * 24 * 60 * 60 * 1000,
        
       }).status(201).json({ message: 'Logged in' , user:{user:'root', password:'admin'}});
    
