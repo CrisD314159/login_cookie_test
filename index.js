@@ -5,7 +5,7 @@ import dotenv from "dotenv";
 import GetRouter from "./routes/router.js";
 import helmet from "helmet";
 dotenv.config();
-const whitelist = ['http://localhost:5173', 'https://cookie-test-front-eight.vercel.app/login']
+const whitelist = ['http://localhost:5173', 'https://cookie-test-front-eight.vercel.app']
 const corsOptions = {
   origin: function (origin, callback) {
     if (whitelist.indexOf(origin) !== -1) {
